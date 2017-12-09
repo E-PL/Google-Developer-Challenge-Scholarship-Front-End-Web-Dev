@@ -1,0 +1,56 @@
+body {
+    text-align: center;
+}
+
+
+/*Headlines*/
+.title {
+    font-family: Monoton;
+    font-size: 88px;
+    margin: 0.2em;
+}
+
+.call-to-action {
+    margin: 1em 0 0.25em;
+}
+
+.first {
+    margin-top: 0.5em;
+}
+
+
+/*Form input*/
+.size {
+    width: 6em;
+    Border: 0.2em solid #0505;
+}
+
+.size:invalid {
+    Border: 0.2em solid #ff0000;
+    background-color: #ff0000;
+ }
+
+
+/*Table container*/
+#canva {
+    min-height: 1001px;
+    min-width: 1101px;
+}
+
+
+/*Table elements*/
+#pixel_canvas {
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.row {
+    height: 10px;
+}
+
+.cell {
+    border: 1px solid #bddfeb;
+    padding: 0;
+    width: 10px;
+}
