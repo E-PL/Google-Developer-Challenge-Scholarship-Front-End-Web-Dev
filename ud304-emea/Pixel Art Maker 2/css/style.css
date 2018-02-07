@@ -1,0 +1,239 @@
+/* adjust content for small screens */
+@media only screen and (max-width: 1027px) {
+	.title {
+		display: none;
+		width: 1px;
+	}
+	#nav1,
+	#nav2,
+	#nav3,
+	#nav4 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	#nav4 {
+		flex-direction: row;
+	}
+	#colorTools {
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+/*style tags */
+/*background*/
+body {
+	background-color: #000;
+}
+
+/*add padding to labels*/
+label {
+	padding: 3px;
+}
+/* add padding to forms */
+form {
+	padding: 3px;
+}
+/*style page elements*/
+
+/*set min-width on main container and set the background image*/
+.container {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+	margin: auto;
+	min-width: 360px;
+	text-align: center;
+}
+
+/*set height and background transparency of the empty header*/
+.header {
+	height: 12px;
+	width: 100%;
+	background-color: transparent;
+}
+
+.navContainer {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+/* set the navbars background and transparency*/
+.navbar {
+	background-color: transparent;
+	display: inline-flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+/*make the title fill the navbar*/
+/* .titleContainer {
+	width: 60%;
+} */
+
+/*set the table container min-height and full width to make space for the table to be created */
+#canva {
+	width: 100%;
+	min-height: 1000px;
+}
+
+/*set the table and container background as transparent*/
+#canva,
+#pixel_canvas {
+	background-color: transparent;
+}
+
+/*make the table borders collapse and be included on cell dimensions*/
+#pixel_canvas {
+	border-collapse: collapse;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+/*set cell minimum dimentions*/
+.cell,
+.row {
+	box-sizing: border-box;
+	min-width: 10px;
+	min-height: 10px;
+	padding: 0;
+}
+
+/*set cell border color*/
+.cell {
+	border: 1px solid #228dff;
+}
+
+/*set footer dimention*/
+.footer {
+	min-height: 113px;
+}
+
+/*style the form controls*/
+
+/* make the canva creation form fit the navbar */
+#sizePicker {
+	width: 100%;
+}
+
+/*style the colorpicker container*/
+#colorTools {
+	/* 	width: 12%; */
+	padding: 3px;
+}
+
+/*make the colorpicker colored div larger*/
+.evo-colorind {
+	height: 66px;
+	width: 27%;
+}
+
+/*position and dimention the colorpicker popup*/
+.evo-pop {
+	position: absolute;
+	top: 6px;
+	left: 0;
+	width: 220px;
+}
+
+/*dimention the colorpicker*/
+#colorPicker {
+	width: 70px;
+	height: 66px;
+}
+
+/*style the url and search text input*/
+.textarea {
+	border: 0.2em solid;
+}
+
+#backgroundurl,
+#search {
+	width: 8em;
+}
+
+/*style the text inputs when invalid */
+.textarea:invalid {
+	border: 0.2em solid red;
+	background-color: red;
+}
+#color-grid, #colorBody {
+	background-color: transparent;
+}
+/*style the text input*/
+.size {
+	width: 5em;
+	border: 0.2em solid;
+}
+
+/*style the text inputs when invalid */
+.size:invalid {
+	border: 0.2em solid red;
+	background-color: red;
+}
+
+/*style text*/
+
+#credits {
+	font-family: Monoton;
+	padding: 3px;
+	font-size: 16px;
+}
+/*style the title and add animation*/
+.title {
+	font-size: 36px;
+	padding-top: 30px;
+	padding: 4px;
+}
+
+/* center the endtitle */
+.endTitle {
+	margin: 0;
+}
+
+/*set icons dimentions*/
+.fa {
+	padding: 3px;
+	font-size: 23px;
+}
+
+/*set neon text dimention*/
+.neon {
+	font-size: 26px;
+}
+
+/* add neon effect*/
+.neon,
+.title {
+	font-family: Monoton;
+	color: #fff;
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+		0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+}
+/*neon animation*/
+.animation {
+	-webkit-animation: neonAnimation 1.5s ease-in-out infinite alternate;
+	animation: neonAnimation 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes neonAnimation {
+	0% {
+		text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+			0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+	}
+	to {
+		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+			0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+	}
+}
+
+@keyframes neonAnimation {
+	0% {
+		text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+			0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+	}
+	to {
+		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+			0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+	}
+}

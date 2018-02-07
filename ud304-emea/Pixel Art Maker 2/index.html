@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pixel Art Maker</title>
+	<meta charset="utf-8">
+	<meta content="Pixel Art Maker" name="description">
+	<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
+	<title>Pixel Art Maker!</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+	<script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.14.0/js/canvas-to-blob.min.js"></script>
+	<script charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script crossorigin="anonymous" integrity="sha256-Gny065l/zHA0esJmVKHcxy224lcwhDDaHtrxi+Luwrw=" src="https://cdn.jsdelivr.net/npm/evol-colorpicker@3.3.1/js/evol-colorpicker.min.js"></script>
+	<!-- load css -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+	<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" rel="stylesheet">
+	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/evol-colorpicker@3.3.1/css/evol-colorpicker.min.css" integrity="sha256-DH10rDlVp7f0HI+QtKf3nvqR53/U3k88QpUE/rEf9LI=" rel="stylesheet">
+	<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<!--    main container -->
+	<div class="container">
+		<!-- header -->
+		<div class="header"></div>
+		<!--	navbar shade	-->
+		<div class="navContainer">
+			<!-- collapsible area -->
+			<div class="collapse" id="navbarcollapse">
+				<!-- first navbar -->
+				<nav id="nav0" class="navbar navbar-toggleable-md navbar-light bg-faded">
+					<span class="neon navbar-text"><i aria-hidden="true" class="tools fa fa-floppy-o inline" id="imageicon"></i></span> <label class="neon" for="screenshot">Save:</label>
+					<!-- save form -->
+					<form class="neon form-inline" id="screenshot" name="save">
+						<button action="submit" class="btn btn-primary mr-sm-2 neon" id="save" type="submit" value="save"><i aria-hidden="true" class="fa fa-floppy-o"></i></button>
+					</form>
+
+				</nav>
+
+				<nav id="nav1" class="navbar navbar-toggleable-md navbar-light bg-faded">
+
+					<!-- size and table creation form -->
+					<form action="#" class="neon form-inline" id="sizePicker" name="sizePicker">
+						<span class="navbar-text"><i aria-hidden="true" class="tools fa fa-file-o"></i></span> <label for="input_height">H:</label> <input class="size form-control mr-sm-2" id="input_height" max="100" min="10" name="height" required="" type="number" value="20">						<label for="input_width">W:</label> <input class="size form-control mr-sm-2" id="input_width" max="100" min="10" name="width" required="" type="number" value="20"> <label class="neon" for="newtable">New canva:</label> <button class="btn btn-danger my-2 my-sm-0 neon"
+						id="newtable" type="submit"><i aria-hidden="true" class="tools fa fa-trash-o"></i></button>
+					</form>
+				</nav>
+
+				<!-- second navbar -->
+				<nav id="nav2" class="navbar navbar-toggleable-md navbar-light bg-faded">
+					<span class="navbar-text neon"><i aria-hidden="true" class="tools fa fa-image" id="imageicon"></i><label id="backgroundUrlLabel" class="neon" for="background">Background: </label></span>
+					<!-- background from url form -->
+					<form class="neon form-inline" id="backgroundSet" name="backgroundSet">
+						<input class="textarea form-control mr-sm-2" id="backgroundurl" type="url" required value="https://scontent-mxp1-1.cdninstagram.com/vp/da26af04a12f51d260e8faca0973ed63/5AFBD0E1/t51.2885-15/s640x640/sh0.08/e35/26067262_765413823666557_8073283471201533952_n.jpg">						<button class="btn btn-outline-info my-2 my-sm-0 neon" type="submit"><i aria-hidden="true" class="fa fa-link"></i></button>
+					</form>
+
+				</nav>
+
+				<nav id="nav3" class="navbar navbar-toggleable-md navbar-light bg-faded">
+
+					<!-- search background image form -->
+					<form class="neon form-inline" id="imagesearch" name="imagesearch">
+						<span class="navbar-text"><i aria-hidden="true" class="tools fa fa-search"></i></span> <label for="search">Flickr:</label> <input class="textarea form-control mr-sm-2" id="search" name="Search" required="" type="text" value="forest">
+						<button class="btn btn-outline-info my-2 my-sm-0 neon" id="imagesearcher" type="submit"><i aria-hidden="true" class="tools fa fa-search"></i></button>
+						<button disabled class="btn btn-outline-info my-2 my-sm-0 neon" id="prevImage"><i aria-hidden="true" class="tools fa fa-toggle-left"></i></button>
+						<button disabled class="btn btn-outline-info my-2 my-sm-0 neon" id="nextImage"><i aria-hidden="true" class="tools fa fa-toggle-right"></i></button>
+						<button disabled class="btn btn-outline-danger my-2 my-sm-0 neon" id="noBackground"><i aria-hidden="true" class="tools fa fa-trash"></i></button>
+
+					</form>
+				</nav>
+			</div>
+			<!-- end of collapsible area -->
+			<!-- third navbar -->
+			<nav id="nav4" class="navbar navbar-toggleable-md navbar-light bg-faded">
+				<span class="navbar-text neon"><i aria-hidden="true" class="fa fa-paint-brush"></i><label class="neon" for="colorTools">Color:</label></span>
+				<!-- colorpicker form and table color button-->
+				<form action="#" class="form-inline" id="colorTools" name="colorTools">
+					<input class="colorPicker evo-cp0" id="colorPicker">
+				</form>
+				<form action="#" class="form-inline" id="tableColor" name="colorTools">
+					<button class="btn btn-outline-success my-2 my-sm-0 neon" id="color-grid"><i aria-hidden="true" class="tools fa fa-table"></i></button>
+					<button class="btn btn-outline-success my-2 my-sm-0 neon" id="colorBody"><i aria-hidden="true" class="tools fa fa-file-o"></i></button>
+				</form>
+				<!-- title container -->
+				<div class="titleContainer neon form-inline">
+					<!-- title and show options button-->
+					<h1 class="title">Lab: <span class="animation">Pixel</span> Ar<span class="animation">t</span> Mak<span class="animation">e</span>r</h1><button class="btn btn-outline-info my-2 mr-sm-2 neon" data-target="#navbarcollapse" data-toggle="collapse" id="shownav" value="show"><i aria-hidden="true" class="tools fa fa-cog"></i></button>
+				</div>
+			</nav>
+		</div>
+		<!-- table container -->
+		<div id="canva"></div>
+		<!-- footer -->
+		<div class="footer">
+			<h3 class="title endTitle">Lab: Pixel Art Maker</h3>
+		</div>
+		<!-- end title -->
+	</div>
+</body>
+<script  src="js/index.js"></script>
+</html>
