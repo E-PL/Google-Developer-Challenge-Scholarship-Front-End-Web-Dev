@@ -1,0 +1,64 @@
+/*Reset margins*/
+
+body, div, h3, img, p, ul, li, span {
+	margin: 0;
+}
+/*Set card dimensions, margins, background, font and shadow*/
+
+.card {
+	width: 322px;
+	height: 500px;
+	margin: 15px;
+	background-color: #dfe5f1;
+	font: 12px/125% 'Merriweather', serif;
+	box-shadow: 5px 5px 0px 0px rgba(150, 166, 182, 0.8);
+	-webkit-box-shadow: 5px 5px 0px 0px rgba(150, 166, 182, 0.8);
+	-moz-box-shadow: 5px 5px 0px 0px rgba(150, 166, 182, 0.8);
+}
+/*Set animal name padding, font and line-height to have it stay at the right height*/
+
+.name {
+	padding: 20px 0px 20px 10px;
+	font: 20px/75% 'Merriweather', serif;
+}
+/*Set image margin and rounded borders*/
+
+.picture {
+	margin-left: 10px;
+	border-radius: 3px;
+}
+/*Set the information div dimensions, padding and background*/
+
+.information {
+	width: 300px;
+	height: 220px;
+	margin: 10px 0px 9px 10px;
+	background-color: #f0f6ff;
+}
+/*Italicize the interesting fact and add padding*/
+
+.interesting-fact {
+	padding: 14px 10px 0px 10px;
+	font-style: italic;
+}
+/*Remove dots from the list*/
+
+.facts {
+	list-style: none;
+}
+/*Makes the labels bold*/
+
+.fact-label {
+	font-weight: bold;
+}
+/*Add padding to the list and interesting fact*/
+
+.description, .facts {
+	padding: 10px 10px 0px 10px;
+}
+/*Add rounded borders to the two div*/
+
+.card, .information {
+	border: 1px solid #5c606b;
+	border-radius: 3px;
+}
